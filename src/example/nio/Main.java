@@ -16,6 +16,7 @@ public class Main {
 
         // call method on the bean
         System.out.println(coach.getDailyWorkOut());
+        System.out.println(coach.getDailyFortune());
         System.out.println(judoCoach.getDailyWorkOut());
         System.out.println(judoCoach.getMotivation());
 

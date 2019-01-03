@@ -14,4 +14,9 @@ public class JudoCoach implements Coach {
     public String getMotivation(){
         return "Get to work!";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
