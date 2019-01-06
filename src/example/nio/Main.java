@@ -14,7 +14,7 @@ public class Main {
         Coach coach = context.getBean("tennisCoach", Coach.class);
         JudoCoach judoCoach = context.getBean("myJudoCoach", JudoCoach.class);
 
-        // call method on the bean
+        // call methods on the beans
         System.out.println(coach.getDailyWorkOut());
         System.out.println(coach.getDailyFortune());
         System.out.println(judoCoach.getDailyWorkOut());
