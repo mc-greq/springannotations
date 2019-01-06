@@ -12,9 +12,9 @@ public class TennisCoach implements Coach {
 
     // field injection
     // added implementation of RegularFortuneService to show use of qualifier
-    // having 2 implementations if same interface we need to tell spring which one to use
-    @Autowired
-    @Qualifier("happyFortuneService")
+    // having 2 implementations of same interface we need to tell Spring which one to use
+//    @Autowired
+//    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
     // default constructor, some debugging info
@@ -22,13 +22,13 @@ public class TennisCoach implements Coach {
         System.out.println(">> TennisCoach inside default constructor");
     }
 
-    /*
-    // injecting dependency into constructor
+
+    // using qualifier in a constructor is a bit different, has to be put inside passing variables
     @Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
-    */
+
 
     /*
     // define setter method for injections
