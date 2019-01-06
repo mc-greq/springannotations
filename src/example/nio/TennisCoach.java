@@ -1,6 +1,7 @@
 package example.nio;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // custom bean ID
@@ -10,7 +11,10 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
     // field injection
+    // added implementation of RegularFortuneService to show use of qualifier
+    // having 2 implementations if same interface we need to tell spring which one to use
     @Autowired
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
 
     // default constructor, some debugging info
