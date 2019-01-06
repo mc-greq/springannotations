@@ -1,10 +1,19 @@
 package example.nio;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("myJudoCoach")
 public class JudoCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    @Autowired
+    public JudoCoach(@Qualifier("fromFileFortuneService") FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 
     @Override
     public String getDailyWorkOut() {
@@ -17,6 +26,6 @@ public class JudoCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        return null;
+        return fortuneService.getFortune();
     }
 }

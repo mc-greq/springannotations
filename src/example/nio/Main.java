@@ -17,8 +17,11 @@ public class Main {
         // call methods on the beans
         System.out.println(coach.getDailyWorkOut());
         System.out.println(coach.getDailyFortune());
+        System.out.println(((TennisCoach) coach).getEmail());
+        System.out.println(((TennisCoach)coach).getTeamName());
         System.out.println(judoCoach.getDailyWorkOut());
         System.out.println(judoCoach.getMotivation());
+        System.out.println(judoCoach.getDailyFortune());
 
         // close the container
         context.close();
