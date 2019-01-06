@@ -9,12 +9,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+    // field injection
+    @Autowired
     private FortuneService fortuneService;
 
     // default constructor, some debugging info
     public TennisCoach() {
         System.out.println(">> TennisCoach inside default constructor");
     }
+
+    /*
+    // injecting dependency into constructor
+    @Autowired
+    public TennisCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+    */
 
     /*
     // define setter method for injections
@@ -26,19 +36,11 @@ public class TennisCoach implements Coach {
     // if there are two methods @Autowired both will be used
     */
 
-
     // setter method for injection can have any name, just @Autowired it
+    /*
     @Autowired
     public void anyMethodName(FortuneService fortuneService){
         System.out.println(">> TennisCoach: inside anyMethodName() method");
-        this.fortuneService = fortuneService;
-    }
-
-
-    /*
-    // injecting dependency into constructor
-    @Autowired
-    public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
     */
